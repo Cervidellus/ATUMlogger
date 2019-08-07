@@ -11,13 +11,19 @@
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
+    timer(new QTimer),
     database(new DatabaseManager)
 {
     ui->setupUi(this);
     database->init();
     setInfoText();
 
-
+    timerMinsLeft = 2;
+    timerSecsLeft = 0;
+    QTime initTime = QTime(0, timerMinsLeft, timerSecsLeft);
+    QString text = initTime.toString("mm:ss");
+    ui->lcdNumber->display(text);
+    connect(timer, &QTimer::timeout, this, &MainWindow::updateCountdown);
 
     //edit button and field properties
     QIntValidator *intValidator = new QIntValidator();
@@ -98,6 +104,19 @@ MainWindow::MainWindow(QWidget *parent) :
         database->insertNote("Stopped For Cleaning Button Pressed");});
     connect(ui->finishedCleaningButton, &QPushButton::pressed, database, [this](){
         database->insertNote("Cleaning Button Pressed");});
+    connect(ui->overfilledBoatButton, &QPushButton::pressed, database, [this](){
+        database->insertNote("Overfilled Boat Button Pressed");
+        timerMinsLeft = 2;
+        timerSecsLeft = 0;
+        timer->start(1000);});
+    connect(this, &MainWindow::countdownFinished, database, [this](){
+        database->insertNote("Overfilled Boat Timer Finished");
+        QTime initTime = QTime(0, 0, 0);
+        QString text = initTime.toString("mm:ss");
+        ui->lcdNumber->display(text);
+        timer->stop();
+    });
+
 }
 
 void MainWindow::setInfoText()
@@ -162,6 +181,24 @@ void MainWindow::setInfoText()
     }
 
 
+}
+
+void MainWindow::updateCountdown()
+{
+    if (timerMinsLeft == 0 && timerSecsLeft == 0) {
+        timerMinsLeft = 0;
+        timerSecsLeft = 0;
+        emit countdownFinished();
+    } else if (timerSecsLeft == 0) {
+        timerMinsLeft--;
+        timerSecsLeft = 59;
+    } else {
+        timerSecsLeft--;
+    }
+
+    QTime time = QTime(0, timerMinsLeft, timerSecsLeft);
+    QString text = time.toString("mm:ss");
+    ui->lcdNumber->display(text);
 }
 
 MainWindow::~MainWindow()

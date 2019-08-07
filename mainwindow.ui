@@ -49,6 +49,12 @@
             </property>
             <item row="0" column="0">
              <widget class="QLabel" name="label_2">
+              <property name="minimumSize">
+               <size>
+                <width>200</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="text">
                <string>General Information</string>
               </property>
@@ -56,6 +62,12 @@
             </item>
             <item row="1" column="0">
              <widget class="QLabel" name="specimenLabel">
+              <property name="minimumSize">
+               <size>
+                <width>200</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="text">
                <string>Specimen</string>
               </property>
@@ -79,6 +91,12 @@
             </item>
             <item row="2" column="0">
              <widget class="QLabel" name="label">
+              <property name="minimumSize">
+               <size>
+                <width>200</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="text">
                <string>Sectioning Session</string>
               </property>
@@ -105,6 +123,12 @@
             </item>
             <item row="3" column="0">
              <widget class="QLabel" name="label_4">
+              <property name="minimumSize">
+               <size>
+                <width>200</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="text">
                <string>Tape ID</string>
               </property>
@@ -128,6 +152,12 @@
             </item>
             <item row="4" column="0">
              <widget class="QLabel" name="label_5">
+              <property name="minimumSize">
+               <size>
+                <width>200</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="text">
                <string>Knife ID</string>
               </property>
@@ -151,6 +181,12 @@
             </item>
             <item row="5" column="0">
              <widget class="QLabel" name="label_6">
+              <property name="minimumSize">
+               <size>
+                <width>200</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="text">
                <string>Cutting Window Top</string>
               </property>
@@ -183,6 +219,12 @@
             </item>
             <item row="6" column="0">
              <widget class="QLabel" name="cuttingWindowBottomLabel">
+              <property name="minimumSize">
+               <size>
+                <width>200</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="text">
                <string>Cutting Window Bottom</string>
               </property>
@@ -206,6 +248,12 @@
             </item>
             <item row="7" column="0">
              <widget class="QLabel" name="cuttingThicknessLabel">
+              <property name="minimumSize">
+               <size>
+                <width>200</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="text">
                <string>Cutting Thickness</string>
               </property>
@@ -213,6 +261,12 @@
             </item>
             <item row="9" column="0">
              <widget class="QLabel" name="cuttingSpeedLabel">
+              <property name="minimumSize">
+               <size>
+                <width>200</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="text">
                <string>Cutting Speed</string>
               </property>
@@ -236,6 +290,12 @@
             </item>
             <item row="10" column="0">
              <widget class="QLabel" name="phaseSyncLabel">
+              <property name="minimumSize">
+               <size>
+                <width>200</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="text">
                <string>Phase Sync</string>
               </property>
@@ -259,6 +319,12 @@
             </item>
             <item row="11" column="0">
              <widget class="QLabel" name="knifeIonizerSettingLabel">
+              <property name="minimumSize">
+               <size>
+                <width>200</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="text">
                <string>Knife Ionizer Setting</string>
               </property>
@@ -282,6 +348,12 @@
             </item>
             <item row="12" column="0">
              <widget class="QLabel" name="primaryOperatorLabel">
+              <property name="minimumSize">
+               <size>
+                <width>200</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="text">
                <string>Primary Operator</string>
               </property>
@@ -305,6 +377,12 @@
             </item>
             <item row="13" column="0">
              <widget class="QLabel" name="secondaryOperatorLabel">
+              <property name="minimumSize">
+               <size>
+                <width>200</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="text">
                <string>Secondary Operator</string>
               </property>
@@ -477,7 +555,7 @@
              </widget>
             </item>
             <item row="1" column="1">
-             <widget class="QPushButton" name="pushButton">
+             <widget class="QPushButton" name="overfilledBoatButton">
               <property name="text">
                <string>Overfilled Boat</string>
               </property>
@@ -520,7 +598,7 @@
      <x>0</x>
      <y>0</y>
      <width>1200</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuATUMlogger">
